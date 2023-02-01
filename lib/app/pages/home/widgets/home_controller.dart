@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:dart_week_delivery/app/dto/order_product_dto.dart';
 import 'package:dart_week_delivery/app/pages/home/widgets/home_state.dart';
 import 'package:dart_week_delivery/app/repositories/products/products_repository.dart';
 
@@ -20,5 +21,20 @@ class HomeController extends Cubit<HomeState> {
         errorMessage: 'Erro ao carregar produtos',
       ));
     }
+  }
+
+  void addOrUpdadeBag(OrderProductDto orderProduct) {
+    final shoppingBag = [...state.shoppingBag];
+    final orderIndex = shoppingBag.indexWhere((element) => element.product == orderProduct.product);
+    if (orderIndex > -1) {
+      if (orderProduct.amount == 0) {
+        shoppingBag.removeAt(orderIndex);
+      } else {
+        shoppingBag[orderIndex] = orderProduct;
+      }
+    } else {
+      shoppingBag.add(orderProduct);
+    }
+    emit(state.copyWith(shoppingBag: shoppingBag));
   }
 }

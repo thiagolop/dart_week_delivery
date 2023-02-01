@@ -1,10 +1,9 @@
 import 'package:dart_week_delivery/app/core/ui/base_state/base_state.dart';
-import 'package:dart_week_delivery/app/core/ui/helpes/loader.dart';
 import 'package:dart_week_delivery/app/core/ui/widgets/delivery_appbar.dart';
 import 'package:dart_week_delivery/app/pages/home/widgets/home_state.dart';
+import 'package:dart_week_delivery/app/pages/home/widgets/shopping_bag_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../core/ui/helpes/messages.dart';
 import 'delivery_product_tile.dart';
 import 'home_controller.dart';
 
@@ -48,12 +47,18 @@ class _HomePageState extends BaseState<HomePage, HomeController> {
                 itemCount: state.products.length,
                 itemBuilder: (context, index) {
                   final product = state.products[index];
+                  final orders = state.shoppingBag.where((order) => order.product == product);
                   return DeliveryProductTile(
+                    orderProduct: orders.isNotEmpty ? orders.first : null,
                     product: product,
                   );
                 },
               ),
             ),
+            Visibility(
+              visible: state.shoppingBag.isNotEmpty,
+              child: ShoppingBagWidget(bag: state.shoppingBag),
+            )
           ]);
         },
       ),

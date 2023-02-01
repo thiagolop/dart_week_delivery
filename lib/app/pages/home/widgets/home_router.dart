@@ -1,9 +1,11 @@
-import 'package:dart_week_delivery/app/pages/home/widgets/home_controller.dart';
+
 import 'package:dart_week_delivery/app/pages/home/widgets/home_page.dart';
 import 'package:dart_week_delivery/app/repositories/products/products_repository.dart';
 import 'package:dart_week_delivery/app/repositories/products/products_repository_impl.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'home_controller.dart';
 
 class HomeRouter {
   HomeRouter._();
