@@ -6,7 +6,8 @@ class DeliveryIncDecButton extends StatelessWidget {
   final int amount;
   final VoidCallback onDecrement;
   final VoidCallback onIncrement;
-  const DeliveryIncDecButton({super.key, required this.amount, required this.onDecrement, required this.onIncrement});
+  final bool compact;
+  const DeliveryIncDecButton({super.key, required this.amount, required this.onDecrement, required this.onIncrement}) : compact = false;
 
   @override
   Widget build(BuildContext context) {
