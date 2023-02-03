@@ -5,7 +5,7 @@ import 'package:dart_week_delivery/app/dto/order_product_dto.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../order/order_controller.dart';
+import 'home_controller.dart';
 
 class ShoppingBagWidget extends StatelessWidget {
   final List<OrderProductDto> bag;
@@ -13,7 +13,7 @@ class ShoppingBagWidget extends StatelessWidget {
 
   Future<void> _goOrder(BuildContext context) async {
     final navigator = Navigator.of(context);
-    final controller = context.read<OrderController>();
+    final controller = context.read<HomeController>();
     final sp = await SharedPreferences.getInstance();
 
     if (!sp.containsKey('accessToken')) {
