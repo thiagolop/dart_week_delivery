@@ -4,5 +4,5 @@ import 'app/dart_week_delivery_app.dart';
 
 void main() async {
   await Env.instance.load();
-  runApp(const DartWeekDeliveryApp());
+  runApp(DartWeekDeliveryApp());
 }
