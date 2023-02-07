@@ -1,16 +1,19 @@
-# dart_week_delivery
+# Vakinha Burger
 
-A new Flutter project.
+App desenvolvido juntamente com o Rodrigo Rahman no dart week 9
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+https://user-images.githubusercontent.com/109871891/217257241-b627e378-f6a2-4f4e-aa1d-8fc3493a183b.mp4
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Aprendizado
+
+* Json rest server
+* Provider
+* Bloc
+* Global navigator 
+* Equatable
+* flutter dotenv
+* match
+
